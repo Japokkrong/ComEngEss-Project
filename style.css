@@ -1,25 +1,159 @@
+/* Overall page layout */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 100px;
-    background-color: gray;
-    
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Container for content */
+.container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 120px; /* Decrease margin to add more space for input box */
+}
+
+/* Container for the logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Add space between logo and heading */
+}
+
+/* Logo styling */
+.logo {
+  max-width: 120px; /* Adjust the size of the logo */
+  height: auto;
+}
+
+/* Heading and description */
+h1 {
+  font-size: 2rem;
+  color: #4a90e2;
+}
+
+/* Input box styling */
+#text-input {
+  font-size: 1rem;
+  padding: 12px;
+  width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#text-input:focus {
+  border-color: #4a90e2;
+}
+
+/* Button styling */
+.speak-btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.speak-btn:hover {
+  background-color: #357ABD;
+}
+
+/* Note styling */
+.note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Smaller rectangular description box at the bottom */
+.description-box {
+  background-color: #e9f5ff;
+  border-top: 4px solid #4a90e2;
+  padding: 10px 20px; /* Reduced padding to move text closer to the top */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  font-size: 1.1rem; /* Slightly smaller font size */
+  color: #333;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+  height: 150px; /* Decreased height */
+  overflow-y: auto; /* Allow scrolling if the content is too long */
+}
+
+/* Make sure the "How to use" text stays at the top */
+.description-box h3 {
+  color: #4a90e2;
+  font-size: 1.3rem; /* Larger heading */
+  margin-top: 0; /* Remove margin at the top to align it closely to the top of the box */
+  margin-bottom: 10px; /* Keep space below the heading */
+}
+
+.description-box p {
+  margin: 7px 0; /* Increased margin between paragraphs */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
   }
-  
-  input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    font-size: 16px;
+
+  h1 {
+    font-size: 1.5rem;
   }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
+
+  .description {
+    font-size: 1rem;
   }
-  
-  button:hover {
-    background-color: #ddd;
+
+  .description-box {
+    font-size: 1rem;
+    height: 180px; /* More space for smaller screens */
   }
-  
+}
+
+/* Back to Login button container */
+.back-btn-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* Back to Login button */
+.back-btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #357ABD;
+}
+
+

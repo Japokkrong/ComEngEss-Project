@@ -1,0 +1,126 @@
+/* Overall page layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  
+  /* Container for the logo */
+  .logo-container {
+    text-align: center;
+    margin-bottom: 30px; /* Add some space below the logo */
+    padding-top: 20px; /* Ensure some space from the top of the page */
+  }
+  
+  /* Logo styling */
+  .logo {
+    max-width: 120px; /* Adjust the size of the logo */
+    height: auto;
+  }
+  
+  /* Container for content */
+  .container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 120px; /* Decrease margin to add more space for input box */
+  }
+  
+  /* Heading and description */
+  h1 {
+    font-size: 2rem;
+    color: #4a90e2;
+  }
+  
+  /* Input box styling */
+  input[type="text"], input[type="password"] {
+    font-size: 1rem;
+    padding: 12px;
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #4a90e2;
+  }
+  
+  /* Button styling */
+  .speak-btn {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .speak-btn:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Register Button Styling */
+  .register-btn {
+    background-color: #357ABD;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .register-btn:hover {
+    background-color: #4a90e2;
+  }
+  
+  /* Note styling */
+  .note {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+    font-style: italic;
+  }
+  
+  .note a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
+  
+  .note a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .note {
+      font-size: 1rem;
+    }
+  }
+  

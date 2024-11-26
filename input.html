@@ -6,12 +6,39 @@
   <title>Text to Speech</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Fruits Vision</h1>
-  <p>Type something below and press the button to hear it!</p>
-  <input type="text" id="text-input" placeholder="Type something here...">
-  <br>
-  <button onclick="speak()">Speak</button>
+<body onload="document.getElementById('text-input').focus();">
+  <!-- Back to Login button placed at top left -->
+  <div class="back-btn-container">
+    <button onclick="window.location.href='login.html'" class="back-btn">Back to Login</button>
+  </div>
+
+  <!-- Logo placed outside the container -->
+  <div class="logo-container">
+    <img src="assets/logo.png" alt="Fruits Vision Logo" class="logo">
+  </div>
+
+  <div class="container">
+    <h1>Fruits Vision</h1>
+    <!-- Text input box -->
+    <input type="text" id="text-input" placeholder="Type something here..." />
+    
+    <!-- Button to speak the text -->
+    <div class="controls">
+      <button onclick="speak()" class="speak-btn">Speak</button>
+    </div>
+    
+    <p class="note">Press Enter to Speak !!!</p>
+  </div>
+  
+  <!-- Long description box at the bottom -->
+  <div class="description-box">
+    <h3>About Us</h3>
+    <p>We are a website that helps blind people recognize and learn about the colors of fruits.</p>
+    <p>By entering the fruit name you want to know (you can start typing immediately when entering the website), then pressing the 
+      <strong>Enter</strong> key or clicking the <strong>Speak</strong> button.</p>
+    <p>The website will speak the fruit's color for you.</p>
+    <p><strong>We currently support fruits in five colors: Red, Yellow, Green, Orange, and Purple, as well as over 150 types of fruits.</strong></p>
+  </div>
 
   <script src="script.js"></script>
 </body>
