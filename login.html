@@ -7,32 +7,40 @@
   <link rel="stylesheet" href="loginStyle.css">
 </head>
 <body onload="document.getElementById('username').focus();">
-  <!-- Logo placed outside the container -->
-  <div class="logo-container">
-    <img src="assets/logo.png" alt="Fruits Vision Logo" class="logo">
-  </div>
-
+  <!-- Container for the login form -->
   <div class="container">
+    <!-- Logo inside the container -->
+    <img src="assets/logo.png" alt="Fruits Vision Logo" class="logo">
+    
+    <!-- Title -->
     <h1>Login</h1>
-
+    <p class="description-text">For blind people please read the guideline under the page.</p>
+    
     <!-- Login Form -->
     <form id="loginForm" onsubmit="return validateForm(event)">
-        <input type="text" id="username" name="username" placeholder="Username" required />
-        <input type="password" id="password" name="password" placeholder="Password" required />
-        <div class="controls">
-          <button type="submit" class="speak-btn">Login</button>
-        </div>
-      </form>
-      
-
-      <!-- Register Button -->
+      <input type="text" id="username" name="username" placeholder="Username" />
+      <input type="password" id="password" name="password" placeholder="Password" />
+      <div class="controls">
+        <button type="submit" class="speak-btn">Login</button>
+      </div>
       <div class="controls">
         <button type="button" class="register-btn" onclick="registerRedirect()">Register</button>
       </div>
     </form>
   </div>
-
-  <!-- Link to loginlogic.js -->
+  
+  <!-- Minimized description box -->
+  <div class="description-box">
+    <h3>Guideline</h3>
+    <p>1.You can fill the username immediately after you enter the website, 
+      then press one <strong>tab</strong>, and fill the password.
+    </p>
+    <p>
+      2.After that press one <strong>tab</strong> for login and two <strong>tab</strong> for register
+      ,then press <strong>Enter</strong>.
+      <p><strong>If any suspicious thing happen please refresh the page and try follow the guideline again !!</strong></p>
+  </div>
+  <!-- JavaScript -->
   <script src="loginlogic.js"></script>
 </body>
 </html>
