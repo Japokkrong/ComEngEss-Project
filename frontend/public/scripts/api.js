@@ -7,13 +7,32 @@ export async function getUsers() {
 }
 
 export async function RegisterUser(user) {
-    fetch(`${BACKEND_URL}/api/users/register`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-    });
+    try {
+        const response = await fetch(`${BACKEND_URL}/api/users/register`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        });
+        
+        const data = await response.json();
+        if (response.status === 500) {
+            throw new Error("Internal Server Error");
+        }
+        
+        return {
+            success: response.ok,
+            message: data.message || data.error,
+            data: data
+        };
+    } catch (error) {
+        return {
+            success: false,
+            message: error.message,
+            data: null
+        };
+    }
 }
 
 export async function LoginUser(user) {
@@ -28,12 +47,20 @@ export async function LoginUser(user) {
         
         const data = await response.json();
         
-        if (!response.ok) {
-            throw new Error(data.error);
+        if (response.status === 500) {
+            throw new Error("Internal Server Error");
         }
         
-        return data;
+        return {
+            success: response.ok,
+            message: data.message || data.error,
+            data: data
+        };
     } catch (error) {
-        throw error;
+        return {
+            success: false,
+            message: error.message,
+            data: null
+        };
     }
 }
