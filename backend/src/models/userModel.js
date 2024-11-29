@@ -7,14 +7,6 @@ const userSchema = new mongoose.Schema({
         trim: true,
         minlength: 3
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        lowercase: true,
-        match: [/\S+@\S+\.\S+/, 'is invalid']
-    },
     password: {
         type: String,
         required: true,
@@ -28,7 +20,8 @@ const userSchema = new mongoose.Schema({
         }
     }
 }, {
-    timestamps: true
+    timestamps: true,
+    strict: true
 });
 
 const User = mongoose.model('User', userSchema);

@@ -2,22 +2,24 @@ import User from "../models/userModel.js";
 
 export const createUser = async (req, res) => {
     try {
-        const newUser = new User(req.body);
+        const { username, password } = req.body;
+        if (!username || !password) {
+            return res.status(400).json({ error: "Username and password are required" });
+        }
+
+        const newUser = new User({ username, password });
         await newUser.save();
         
-        res.status(200).json({ message: "OK" });
+        res.status(200).json({ message: "Registration successful" });
     }
     catch(err) {
+          if (err.code === 11000) {
+
+            return res.status(400).json({ error: "Username already registered" });
+
+        }
         if (err.name === "ValidationError") {
-            if (err.errors.email) {
-                if (err.errors.email.kind === "unique") {
-                    res.status(400).json({ error: "Email is already registered" });
-                } else {
-                    res.status(400).json({ error: "Invalid email format" });
-                }
-            } else if (err.errors.username) {
-                res.status(400).json({ error: "Username is already registered" });
-            } else if (err.errors.password) {
+            if (err.errors.password) {
                 res.status(400).json({ error: err.errors.password.message });
             } else {
                 res.status(400).json({ error: "Validation error" });
@@ -35,9 +37,13 @@ export const getUsers = async (req, res) => {
 };
 
 export const loginUser = async (req, res) => {
-    const { username, password } = req.body;
-
     try {
+        const { username, password } = req.body;
+
+            if (!username || !password) {
+        return res.status(400).json({ error: "Username and password are required" });
+        }
+
         const user = await User.findOne({ username });
 
         if (!user) {
