@@ -1,11 +1,5 @@
 import { BACKEND_URL } from "./config.js";
 
-export async function getUsers() {
-    const response = await fetch(`${BACKEND_URL}/api/users`);
-    const users = await response.json();
-    return users;
-}
-
 export async function RegisterUser(user) {
     try {
         const response = await fetch(`${BACKEND_URL}/api/users/register`, {

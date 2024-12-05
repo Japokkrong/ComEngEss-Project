@@ -1,4 +1,4 @@
-import { getUsers, RegisterUser, LoginUser } from "./api.js";
+import { RegisterUser, LoginUser } from "./api.js";
 import { speak } from "./speak.js";
 
 export async function handleLogin() {

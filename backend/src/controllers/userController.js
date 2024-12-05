@@ -30,11 +30,6 @@ export const createUser = async (req, res) => {
     }
 };
 
-export const getUsers = async (req, res) => {
-    const users = await User.find();
-
-    res.status(200).json(users);
-};
 
 export const loginUser = async (req, res) => {
     try {
