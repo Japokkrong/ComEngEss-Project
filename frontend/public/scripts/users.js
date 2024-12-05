@@ -7,8 +7,6 @@ export async function handleLogin() {
 
     const result = await LoginUser({ username, password });
 
-    console.log(result);
-
    speak(result.message); 
    if (result.success) {
        window.location.href = "../input.html";
@@ -20,8 +18,6 @@ export async function handleRegister() {
     const password = document.getElementById("password").value;
 
     const result = await RegisterUser({ username, password });
-
-    console.log(result);
 
    speak(result.message); 
 }
